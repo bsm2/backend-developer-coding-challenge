@@ -62,6 +62,18 @@ return [
             ]) : [],
         ],
 
+        'testing_db' => [
+            'driver' => 'mysql',
+            'host' => env('TEST_DB_HOST'),
+            'database' => env('TEST_DB_DATABASE'),
+            'username' => env('TEST_DB_USERNAME'),
+            'password' => env('TEST_DB_PASSWORD'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+        ],
+
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
@@ -147,7 +159,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 
