@@ -15,3 +15,11 @@
 ```bash
 git clone https://github.com/bsm2/backend-developer-coding-challenge.git
 cd backend-developer-coding-challenge
+```
+
+### 2. Install PHP & JavaScript  dependencies
+
+```bash
+composer install
+npm install
+```
