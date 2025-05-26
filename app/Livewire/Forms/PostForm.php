@@ -25,7 +25,7 @@ class PostForm extends Form
     public string $status;
     #[Validate('nullable|date_format:Y-m-d H:i|after:today')]
     public string $scheduled_time;
-    #[Validate('nullable|image')]
+    #[Validate('nullable|image|max:10240')]
     public  $image;
     public  $platforms;
 }

@@ -9,6 +9,7 @@ use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Console\View\Components\Task;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -39,6 +40,11 @@ class Edit extends Component
     public function save(Request $request)
     {
         $this->validate();
+        if ($this->post->status == 'published') {
+            throw ValidationException::withMessages([
+                'status' => 'Post already published',
+            ]);
+        }
         $mediaService = new MediaService();
         $validated = $this->form->all();
         $validated['user_id'] = request()->user()->id;

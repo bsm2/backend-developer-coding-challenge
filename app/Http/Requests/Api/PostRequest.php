@@ -37,7 +37,7 @@ class PostRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'content' => ['required', 'string', 'max:500'],
-            'image' => ['nullable', 'file', 'image'],
+            'image' => ['nullable', 'file', 'image', 'max:10240'],
             'status' => ['required', 'string', Rule::in('draft', 'scheduled')],
             'scheduled_time' => ['required', 'string', 'date_format:Y-m-d H:i', 'after:today'],
             'platforms' => ['required', 'array'],

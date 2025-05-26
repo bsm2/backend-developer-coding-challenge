@@ -44,6 +44,7 @@ class PublishPost extends Command
                             $poster->publish($post);
 
                             logger()->info("Published to $platform: Post #{$post->id}");
+                            sleep(1);
                         } catch (\Throwable $e) {
                             $success = false;
                             logger()->error("Failed to post to $platform for Post #{$post->id}: {$e->getMessage()}");
