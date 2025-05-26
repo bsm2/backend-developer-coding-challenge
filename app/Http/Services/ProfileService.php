@@ -11,7 +11,7 @@ class ProfileService
 {
 
     /**
-     * Summary of update
+     * update profile
      * @param mixed $request
      * @return void
      */
@@ -23,7 +23,7 @@ class ProfileService
     }
 
     /**
-     * Summary of get
+     *  get profile
      * @param mixed $request
      */
     public function get($request)
@@ -31,6 +31,11 @@ class ProfileService
         return $request->user('api');
     }
 
+    /**
+     * change password
+     * @param mixed $request
+     * @return void
+     */
     public function changePassword($request)
     {
         $user = $request->user('api');
@@ -46,7 +51,7 @@ class ProfileService
     }
 
     /**
-     * Summary of delete
+     * delete user account
      * @param mixed $request
      * @return void
      */

@@ -12,6 +12,12 @@ class PostService
 {
     public function __construct(protected MediaService $mediaService) {}
 
+    /**
+     * store post by user
+     * @param mixed $request
+     * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
+     * @return void
+     */
     public function store($request)
     {
         $user = $request->user();
@@ -36,12 +42,17 @@ class PostService
         $post->platforms()->sync($syncData);
     }
 
+    /**
+     * list of all user posts
+     * @param mixed $request
+     */
     public function posts($request)
     {
         return $request->user()->posts()->filter($request->query())->paginate(10);
     }
+
     /**
-     * Summary of update
+     * update user post
      * @param mixed $request
      * @return void
      */
@@ -64,7 +75,7 @@ class PostService
     }
 
     /**
-     * Summary of update
+     * delete user's post by user
      * @param mixed $request
      * @return void
      */

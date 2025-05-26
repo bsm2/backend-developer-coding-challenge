@@ -12,7 +12,7 @@ use Illuminate\Validation\ValidationException;
 class PlatformService
 {
     /**
-     * Summary of platforms
+     * list of all platforms
      * @param mixed $request
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
@@ -22,7 +22,7 @@ class PlatformService
     }
 
     /**
-     * Summary of toggle
+     * toggle user platform status
      * @param array $platforms
      * @return void
      */
