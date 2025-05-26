@@ -27,31 +27,37 @@ composer install
 npm install
 ```
 
-### 2. Copy the environment file:
+### 3. Copy the environment file:
 
 ```bash
 cp .env.example .env
 ```
 
-### 2. Generate application key
+### 4. Generate application key
 
 ```bash
    php artisan key:generate
 ```
 
-### 2. Run database migrations
+### 5. Run database migrations
 
 ```bash
    php artisan artisan migrate --seed
 ```
 
-### 2. Build frontend assets
+### 6. Link Storage
+
+```bash
+   php artisan storage:link
+```
+
+### 7. Build frontend assets
 
 ```bash
   npm run dev or npm run build On production
 ```
 
-### 2. Serve App
+### 8. Serve App
 
 ```bash
   php artisan artisan serve
